@@ -13,11 +13,16 @@
         </van-col>
       </van-row>
     </div>
+    <swiper></swiper>
   </div>
 </template>
 
 <script>
+import swiper from './swiper.vue'
 export default {
+  components: {
+    swiper
+  },
   data() {
     return {
       msg: 'Shopping Mall'

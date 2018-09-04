@@ -29,43 +29,39 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## 依赖于vant
-> 1. vant优势:
-  1. 国人制造，复合中国网站样式和交互习惯；
-  2. 单元测试超过90%，有些个人的小样式组件是不作单元测试的；
-  3. 支持babel-plugin-import引入，按需加载插件，无需单独引入样式；
-  4. 支持TypeScript，这个是2018年前端最应该学的技术；
-  5. 支持SSR，服务端渲染也是可以使用这个组件库的；
-> 2. 安装
+## 1. 依赖于vant
+
+1. 安装
 
 ```
 npm install vant --save --registry=https://registry.npm.taobao.org 
 ```
+2. 使用vant
 
-> 3. 使用
-1. 全局引入 （不建议此方法引入，首屏打开时会比较慢，且增加打包体积）
+(1). 全局引入 （不建议此方法引入，首屏打开时会比较慢，且增加打包体积）
 ```
 import Vant from 'vant'
 import 'vant/lib/vant-css/index.css'
 Vue.use(Vant)
 ```
-2. 按需引入 
 
-1. 安装babel-plugin-import插件
-```
-npm i -D babel-plugin-import 
-```
-2. 在.babelrc中配置plugins
-```
-"plugins": [
-    "transform-vue-jsx", 
-    "transform-runtime",
-    ["import",{"libraryName":"vant","style":true}]
-  ]
-```
-3. 使用
-```
-import { Button } from 'vant'
-Vue.use(Button)
-<van-button size="mini"></van-button>
-```
+(2). 按需引入 
+
+  1). 安装babel-plugin-import插件
+  ```
+  npm i -D babel-plugin-import 
+  ```
+  2). 在.babelrc中配置plugins
+  ```
+  "plugins": [
+      "transform-vue-jsx", 
+      "transform-runtime",
+      ["import",{"libraryName":"vant","style":true}]
+    ]
+  ```
+  3). 使用方式
+  ```
+  import { Button } from 'vant'
+  Vue.use(Button)
+  <van-button size="mini"></van-button>
+  ```

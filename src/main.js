@@ -5,13 +5,13 @@ import App from './App'
 import router from './router'
 import '@/assets/iconfonts/iconfont.css'
 import 'vant/lib/vant-css/index.css'
-
 import {
   Button,
   Row,
   Col,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  lazyload // 图片懒加载
 } from 'vant'
 
 Vue.use(Button)
@@ -19,6 +19,10 @@ Vue.use(Button)
   .use(Col)
   .use(Swipe)
   .use(SwipeItem)
+  .use(lazyload)
+
+// 引入服务
+import '@/service/fetch.js'
 
 Vue.config.productionTip = false
 
