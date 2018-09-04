@@ -6,10 +6,19 @@ import router from './router'
 import '@/assets/iconfonts/iconfont.css'
 import 'vant/lib/vant-css/index.css'
 
-import { Button, Row, Col } from 'vant'
+import {
+  Button,
+  Row,
+  Col,
+  Swipe,
+  SwipeItem
+} from 'vant'
+
 Vue.use(Button)
   .use(Row)
   .use(Col)
+  .use(Swipe)
+  .use(SwipeItem)
 
 Vue.config.productionTip = false
 
