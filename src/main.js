@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 import '@/assets/iconfonts/iconfont.css'
 import 'vant/lib/vant-css/index.css'
+import '@/less/index.less'
+
 import {
   Button,
   Row,

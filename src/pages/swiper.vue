@@ -1,8 +1,8 @@
 <template>
   <div class="swiper-area">
-    <van-swipe :autoplay="1000">
+    <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(banner, idx) in bannerPicArray" :key="idx">
-        <img :src="banner.imageUrl" width="100%" alt="" v-lazy="banner.imageUrl">
+        <img v-lazy="banner.imageUrl" width="100%" alt="" >
       </van-swipe-item>
     </van-swipe>
   </div>
@@ -23,8 +23,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.swiper-area, .van-swipe {
-  width: 100%;
+.swiper-area {
+  clear: both;
+  max-height: 12rem;
   overflow: hidden;
 }
 </style>

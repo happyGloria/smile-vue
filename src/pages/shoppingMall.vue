@@ -1,54 +1,39 @@
 <template>
   <div class="shopping-mall">
-    <div class="search-bar">
-      <van-row>
-        <van-col span="3">
-          <i class="icon icon-location"></i>
-        </van-col>
-        <van-col span="16">
-          <input type="text" class="search-input">
-        </van-col>
-        <van-col span="5">
-          <van-button size="mini" class="search-btn">查找</van-button>
-        </van-col>
-      </van-row>
-    </div>
+    <!-- search bar -->
+    <search-bar></search-bar>
+    <!-- swiper area -->
     <swiper></swiper>
+    <!-- category -->
+    <category :category="category"></category>
   </div>
 </template>
 
 <script>
+import searchBar from './searchbar.vue'
 import swiper from './swiper.vue'
+import category from './category.vue'
 export default {
   components: {
-    swiper
+    searchBar,
+    swiper,
+    category
   },
   data() {
     return {
-      msg: 'Shopping Mall'
+      category: []
     }
+  },
+  created() {
+    Service.getIndex().then(r => {
+      this.category = r.data.category
+    })
+    /* this.$http({
+      url: 'https://www.easy-mock.com/mock/5b8e03a7ae6b714d1bc70006/SmileVue/index',
+      method: 'get'
+    }).then(res => {
+      console.log(res)
+    }) */
   }
 }
 </script>
-
-<style lang="less" scoped>
-.search-bar {
-  height: 2.2rem;
-  line-height: 2.2rem;
-  background-color: #e5017d;
-  padding: 0 10px;
-
-  .icon-location {
-    color: #fff;
-    font-size: 1rem;
-  }
-  .search-input {
-    width: 100%;
-    height: 1.3rem;
-    border: none;
-    border-bottom: 1px solid #fff !important;
-    background-color: #e5017d;
-    color: #fff;
-  }
-}
-</style>
