@@ -6,6 +6,9 @@
     <swiper></swiper>
     <!-- category -->
     <category :category="category"></category>
+    <div class="ad-banner">
+      <img v-lazy="adBanner" alt="" width="100%">
+    </div>
   </div>
 </template>
 
@@ -21,12 +24,14 @@ export default {
   },
   data() {
     return {
-      category: []
+      category: [],
+      adBanner: ''
     }
   },
   created() {
     Service.getIndex().then(r => {
       this.category = r.data.category
+      this.adBanner = r.data.advertesPicture.PICTURE_ADDRESS
     })
     /* this.$http({
       url: 'https://www.easy-mock.com/mock/5b8e03a7ae6b714d1bc70006/SmileVue/index',

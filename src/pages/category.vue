@@ -1,13 +1,9 @@
 <template>
   <div class="category">
-    <ul class="clearfix">
-      <li v-for="(cate, idx) in category" :key="idx" class="fl">
-        <div class="img-wrap">
-          <img :src="cate.image" alt="">
-        </div>
-        <div class="title">{{cate.mallCategoryName}}</div>
-      </li>
-    </ul>
+    <div class="cate-item"  v-for="(cate, idx) in category" :key="idx">
+      <img v-lazy="cate.image">
+      <div class="title">{{cate.mallCategoryName}}</div>
+    </div>
   </div>
 </template>
 
@@ -27,4 +23,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #f1f1f1;
+  margin: 0 .3rem .3rem .3rem;
+  border-radius: .3rem;
+  padding: .2rem;
+  .cate-item {
+    padding: .1rem;
+    text-align: center;
+    img {
+      width: 90%;
+    }
+    div {
+      font-size: 14px;
+      padding: .3rem;
+    }
+  }
+}
 </style>
