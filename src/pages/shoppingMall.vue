@@ -15,6 +15,7 @@
       </van-row>
     </div>
     <!-- swiper area -->
+<<<<<<< HEAD
     <div class="swiper-area">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(banner, idx) in bannerPicArray" :key="idx">
@@ -55,6 +56,14 @@
       :floorData="f"
       :clz="(idx % 2 == 0) ? 'floor-anomaly' : 'floor-rule'">
     </floor>
+=======
+    <swiper></swiper>
+    <!-- category -->
+    <category :category="category"></category>
+    <div class="ad-banner">
+      <img v-lazy="adBanner" alt="" width="100%">
+    </div>
+>>>>>>> 9f9ce4ab7ac376eae7eda7de0eee9289a27f353e
   </div>
 </template>
 
@@ -72,6 +81,7 @@ export default {
   data() {
     return {
       category: [],
+<<<<<<< HEAD
       bannerPicArray: [],
       advBannerUrl: '',
       recommendGoods: [],
@@ -82,6 +92,9 @@ export default {
       },
       floorNames: [],
       floors: []
+=======
+      adBanner: ''
+>>>>>>> 9f9ce4ab7ac376eae7eda7de0eee9289a27f353e
     }
   },
   mounted() {
@@ -89,11 +102,15 @@ export default {
       console.log('data: ', r.data)
       this.bannerPicArray = r.data.slides
       this.category = r.data.category
+<<<<<<< HEAD
       this.advBannerUrl = r.data.advertesPicture.PICTURE_ADDRESS
       this.recommendGoods = r.data.recommend
 
       this.floorNames = r.data.floorName
       this.floors = [r.data.floor1, r.data.floor2, r.data.floor3]
+=======
+      this.adBanner = r.data.advertesPicture.PICTURE_ADDRESS
+>>>>>>> 9f9ce4ab7ac376eae7eda7de0eee9289a27f353e
     })
   }
 }

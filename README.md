@@ -78,13 +78,14 @@ proxyTable: {
 
 在做该项目的时候，使用了[Easy Mock](www.easy-mock.com)，Easy Mock具有如下优势：
 
-- 支持跨域
-- 支持mock.js语法
-- 支持Swagger: [Swagger](https://swagger.io)是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。
+- 1. 支持跨域
+- 2. 支持mock.js语法
+- 3. 支持Swagger: [Swagger](https://swagger.io)是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。
 
-我是看掘金上的一篇文章学习的，请[查看相关文章](https://juejin.im/post/58ff1fae61ff4b0066792f6e)
+具体请[参考掘金文章学习](https://juejin.im/post/58ff1fae61ff4b0066792f6e)
 
-那么就让我们看一下，在项目中如何进行使用吧：
+在项目中的使用方式：
+
 1. 在config目录下的 dev.env.js和 pro.env.js
   ```
   // dev.env.js
@@ -117,6 +118,8 @@ axiosObj = axios.create({
   返回一个二维数组，数组中的每一项是 [自定义接口名称， 接口路径， 请求方式]
 2. fetch.js 针对axios进行封装， 统一处理拦截器和响应
 3. 在/pages 中使用：Service.getIndex(params).then(r => {})
+
+
 
 
 
